@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+</head>
+<body>
+    <h1>Add a New Book</h1>
+
+    <form id="addBookForm">
+        <label>Title:</label><br>
+        <input type="text" id="title" required><br><br>
+
+        <label>Author:</label><br>
+        <input type="text" id="author" required><br><br>
+
+        <label>ISBN:</label><br>
+        <input type="text" id="isbn" required><br><br>
+
+        <label>Category:</label><br>
+        <input type="text" id="category"><br><br>
+
+        <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Link to backend logic -->
+    <script src="../services/bookService.js"></script>
+</body>
+</html>
