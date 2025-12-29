@@ -30,9 +30,32 @@ document.addEventListener("DOMContentLoaded", () => {
             title: document.getElementById("title").value.trim(),
             author: document.getElementById("author").value.trim(),
             isbn: document.getElementById("isbn").value.trim(),
-            category: document.getElementById("category").value.trim()
+            category: document.getElementById("category").value.trim(),
+            status: "available",      // LMS-17
+            issuedTo: null             // LMS-17
         };
+
 
         addBook(book);
     });
 });
+// --- LMS-17: Issue book to member ---
+function issueBook(isbn, memberName) {
+    const book = books.find(b => b.isbn === isbn);
+
+    if (!book) {
+        alert("Book not found.");
+        return;
+    }
+
+    if (book.status === "issued") {
+        alert("This book is already issued.");
+        return;
+    }
+
+    book.status = "issued";
+    book.issuedTo = memberName;
+
+    saveBooks();
+    alert(`Book issued successfully to ${memberName}`);
+}
