@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- LMS-28: Password Reset -->
+
+<section id="password-reset">
+  <h2>Password Reset</h2>
+  <p>Enter your registered email to receive a password reset link.</p>
+
+  <form id="passwordResetForm">
+    <input
+      type="email"
+      id="resetEmail"
+      placeholder="Email address"
+      required
+    />
+    <button type="submit">Reset Password</button>
+  </form>
+
+  <small id="resetMessage"></small>
+</section>
+
+<script>
+  // LMS-28: Password Reset logic (frontend placeholder)
+  document
+    .getElementById("passwordResetForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("resetEmail").value;
+
+      document.getElementById("resetMessage").textContent =
+        "If an account exists for " + email + ", a reset link will be sent.";
+    });
+</script>
