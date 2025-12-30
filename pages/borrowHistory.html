@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Member Borrowing History</title>
+</head>
+<body>
+
+<h2>View Member Borrowing History</h2>
+
+<label>Member ID:</label><br>
+<input type="text" id="memberIdInput" />
+<button id="viewHistoryBtn">View History</button>
+
+<p id="statusMessage"></p>
+
+<h3>Borrowing Records</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Date Borrowed</th>
+      <th>Book Title</th>
+      <th>ISBN</th>
+      <th>Date Returned</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="historyTableBody"></tbody>
+</table>
+
+<script src="../services/borrowHistoryService.js"></script>
+</body>
+</html>
