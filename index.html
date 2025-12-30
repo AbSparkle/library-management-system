@@ -1,11 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- LMS-4: Edit Book Details -->
+
+<section id="edit-book">
+  <h2>Edit Book Details</h2>
+
+  <form id="editBookForm">
+    <label for="bookId">Book ID</label>
+    <input type="text" id="bookId" placeholder="Enter Book ID" required />
+
+    <label for="bookTitle">Title</label>
+    <input type="text" id="bookTitle" placeholder="Enter Book Title" required />
+
+    <label for="bookAuthor">Author</label>
+    <input type="text" id="bookAuthor" placeholder="Enter Author Name" required />
+
+    <label for="bookCategory">Category</label>
+    <input type="text" id="bookCategory" placeholder="Enter Category" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <p id="editBookMsg"></p>
+</section>
+
+<script>
+  // LMS-4: Edit Book Details placeholder logic (frontend only)
+  document
+    .getElementById("editBookForm")
+    ?.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById("bookId").value.trim();
+      const title = document.getElementById("bookTitle").value.trim();
+      const author = document.getElementById("bookAuthor").value.trim();
+
+      const msg = document.getElementById("editBookMsg");
+
+      if (!id || !title || !author) {
+        msg.textContent = "Book ID, Title, and Author are required.";
+        return;
+      }
+
+      // Placeholder message (no backend yet)
+      msg.textContent = `Book ${id} updated successfully.`;
+    });
+</script>
