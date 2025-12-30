@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Remove Inactive Members</title></head>
+<body>
+<h2>Remove Inactive Members</h2>
+
+<p>Inactive members are those with <strong>isActive = false</strong>.</p>
+<button id="loadBtn">Load Inactive Members</button>
+
+<table border="1" style="margin-top:12px;">
+  <thead>
+    <tr><th>Member ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Action</th></tr>
+  </thead>
+  <tbody id="inactiveBody"></tbody>
+</table>
+
+<script src="../services/removeInactiveMembersService.js"></script>
+</body>
+</html>
