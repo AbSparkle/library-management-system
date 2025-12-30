@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Search Books by Availability</title></head>
+<body>
+<h2>Search Books by Availability</h2>
+
+<label>Availability:</label>
+<select id="availabilityFilter">
+  <option value="all">All</option>
+  <option value="available">Available</option>
+  <option value="unavailable">Not Available</option>
+</select>
+
+<button id="searchBtn">Search</button>
+
+<table border="1" style="margin-top:12px;">
+  <thead>
+    <tr><th>Title</th><th>Author</th><th>ISBN</th><th>Status</th></tr>
+  </thead>
+  <tbody id="resultsBody"></tbody>
+</table>
+
+<script src="../services/searchBooksAvailabilityService.js"></script>
+</body>
+</html>
