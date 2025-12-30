@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- LMS-27: Role-Based Access Control -->
+
+<div id="role-banner"></div>
+
+<!-- Example controls (replace these IDs with your real buttons/sections if you already have them) -->
+<button id="add-book-btn">Add Book</button>
+<button id="edit-book-btn">Edit Book</button>
+<button id="delete-book-btn">Delete Book</button>
+
+<script>
+  // LMS-27: Role-Based Access Control (frontend placeholder)
+  // Change this value to "member" to test member restrictions
+  const userRole = "librarian"; // "member" | "librarian"
+
+  const banner = document.getElementById("role-banner");
+  banner.textContent = `Logged in as: ${userRole}`;
+
+  // Librarian-only controls
+  const librarianOnlyIds = ["add-book-btn", "edit-book-btn", "delete-book-btn"];
+
+  if (userRole === "member") {
+    librarianOnlyIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = "none";
+    });
+  }
+</script>
