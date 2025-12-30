@@ -1,11 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- LMS-26: User Login (Member/Librarian) -->
+
+<section id="login">
+  <h2>User Login</h2>
+
+  <form id="loginForm">
+    <label for="loginEmail">Email</label>
+    <input type="email" id="loginEmail" placeholder="Enter email" required />
+
+    <label for="loginPassword">Password</label>
+    <input type="password" id="loginPassword" placeholder="Enter password" required />
+
+    <label for="loginRole">Role</label>
+    <select id="loginRole" required>
+      <option value="">Select role</option>
+      <option value="member">Member</option>
+      <option value="librarian">Librarian</option>
+    </select>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p id="loginMsg"></p>
+</section>
+
+<script>
+  // LMS-26: User Login placeholder (frontend only)
+  document.getElementById("loginForm")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+    const role = document.getElementById("loginRole").value;
+
+    const msg = document.getElementById("loginMsg");
+    if (!email || !password || !role) {
+      msg.textContent = "Please fill in all fields to login.";
+      return;
+    }
+
+    // Placeholder: real authentication will be implemented with backend later
+    msg.textContent = `Login submitted for ${role}: ${email}`;
+  });
+</script>
