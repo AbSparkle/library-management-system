@@ -36,3 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
         addBook(book);
     });
 });
+// --- LMS-18: Return book ---
+function returnBook(isbn) {
+    const book = books.find(b => b.isbn === isbn);
+
+    if (!book) {
+        alert("Book not found.");
+        return;
+    }
+
+    if (book.status === "available") {
+        alert("This book is already available.");
+        return;
+    }
+
+    book.status = "available";
+    book.issuedTo = null;
+
+    saveBooks();
+    alert("Book returned successfully.");
+}
